@@ -26,8 +26,10 @@ jobs:
         id: sentence_maker
         run: |
             echo "ZMIENNA_PROD='zmienna prod'" >> "$GITHUB_OUTPUT"
+            echo "ZMIENNA_PROD_2='zmienna prod 2'" >> "$GITHUB_OUTPUT"
     outputs:
       prod_output: ${{ steps.sentence_maker.outputs.ZMIENNA_PROD }}
+      prod_output_2: ${{ steps.sentence_maker.outputs.ZMIENNA_PROD_2 }}
 
   consumer:
     needs: [producer]
@@ -36,6 +38,7 @@ jobs:
       - name: Print the message
         run: |
           echo ${{ needs.producer.outputs.prod_output }}
+          echo ${{ needs.producer.outputs.prod_output_2 }}
 
   job_1:
     name: Add 3 and 7
