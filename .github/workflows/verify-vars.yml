@@ -5,6 +5,7 @@ env:
  WORKFLOW_VAR: "Workflow variable"
 jobs:
  display-variables:
+   environment: test
    name: ${{ vars.ENVIRONMENT_VAR }}
    runs-on: ubuntu-latest
    env:
