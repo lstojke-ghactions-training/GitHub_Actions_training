@@ -13,7 +13,11 @@ jobs:
     steps:
       - name: Set color
         id: color-selector
-        run: echo "ZMIENNA='Ala ma kota'" >> "$GITHUB_OUTPUT"
+        env:
+          ZMIENNA: Ala ma kota
+        run: |
+          echo "$ZMIENNA"
+          echo "$ZMIENNA" >> "$GITHUB_OUTPUT"
       - name: Get color
         run: echo "The selected color is ${{ steps.color-selector.outputs.ZMIENNA }}"
         
