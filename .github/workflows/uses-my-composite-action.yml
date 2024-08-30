@@ -7,7 +7,7 @@ jobs:
    steps:
      - uses: actions/checkout@v4
      - id: foo
-       uses: lstojke/GitHub_Actions_training/my-composite-action@main #⬅ Zmienić 
+       uses: lstojke-ghactions-training/GitHub_Actions_training/my-composite-action@main #⬅ Zmienić 
        with:
          who-to-greet: Lukasz #⬅ Uwaga
      - run: echo random-number "$RANDOM_NUMBER"
