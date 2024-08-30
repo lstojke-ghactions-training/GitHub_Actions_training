@@ -12,9 +12,14 @@ on:
         required: true
       environment:
         type: environment
+      matrix_from_json:
+        required: true
         
 jobs:
   log-the-inputs:
+    strategy:
+      matrix:
+         ${{ fromJSON(matrix_from_json) }}
     runs-on: ubuntu-latest
     steps:
       - name: Show log level
