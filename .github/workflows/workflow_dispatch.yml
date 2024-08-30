@@ -20,7 +20,7 @@ jobs:
   log-the-inputs:
     strategy:
       matrix:
-         ${{ fromJSON(matrix_from_json) }}
+         ${{ fromJSON(inputs.matrix_from_json) }}
     runs-on: ubuntu-latest
     steps:
       - name: Show log level
