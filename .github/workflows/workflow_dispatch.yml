@@ -13,6 +13,7 @@ on:
       environment:
         type: environment
       matrix_from_json:
+        type: string
         required: true
         
 jobs:
